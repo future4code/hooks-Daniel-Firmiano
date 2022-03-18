@@ -74,12 +74,18 @@ return {
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+   let num8 = []
+   for(let i = 0; num8.length < n; i ++ ){
+   if(i % 2 === 0){
+       num8.push(i)
+   }
+}
+   return num8
 }
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
+   
 }
 
 // EXERCÍCIO 10
