@@ -33,10 +33,12 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-    // const numPares = array.filter(par => par % 2 === 0)
-    // const elevado = numPares.map(function(item, indice){
-    //     return Math.pow(item, 2);
-    // })
+   let numero = []
+   for (let i = 0; i < array.length; i++ ){
+       if(array[i] % 2 === 0)
+       numero.push(array[i]**2)
+   }
+   return numero
 }
 
 // EXERCÍCIO 06
@@ -99,17 +101,21 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-   
+//     const arrayOrdenada = array.sort()
+//     let segundoMaiorNum = arrayOrdenada.length -1
+//     let penultimoMaiorNum = arrayOrdenada[1]
+//     let meuArray = [segundoMaiorNum, penultimoMaiorNum]
+//    return meuArray
 }
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+   return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-   
+    
 }
 
 // EXERCÍCIO 13A
