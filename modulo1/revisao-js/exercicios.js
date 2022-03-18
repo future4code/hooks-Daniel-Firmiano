@@ -22,12 +22,18 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+    let arrayPares = [];
+    for (let index = 0; index < array.length; index++) {
+        if (array[index] % 2 === 0) {
+            arrayPares.push(array[index]);
+        }
+    }
+    return arrayPares;
 }
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+    
 }
 
 // EXERCÍCIO 06
