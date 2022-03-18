@@ -33,17 +33,26 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-    
+    // const numPares = array.filter(par => par % 2 === 0)
+    // const elevado = numPares.map(function(item, indice){
+    //     return Math.pow(item, 2);
+    // })
 }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+    let maior = -Infinity
+    for(let i = 0; i < array.length; i++) {
+        if (array[i] > maior) {
+            maior = array[i]
+        }
+    }
+    return maior
 }
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+    
 }
 
 // EXERCÍCIO 08
