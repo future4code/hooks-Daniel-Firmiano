@@ -85,12 +85,21 @@ function retornaNPrimeirosPares(n) {
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-   
+    const esc = "Escaleno"
+    const iso = "Isósceles"
+    const equi = "Equilátero"
+    if(ladoA === ladoB && ladoA ===  ladoC) {
+        return equi
+    } else if (ladoA !== ladoB && ladoA !==  ladoC && ladoB !== ladoC) {
+        return esc
+    } else {
+        return iso
+    }
 }
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+   
 }
 
 // EXERCÍCIO 11
