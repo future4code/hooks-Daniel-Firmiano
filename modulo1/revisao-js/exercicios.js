@@ -145,12 +145,25 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-    
+    // let soma = 0
+    // let novoSaldo = 0
+    // for (let i = 0; i < contas.length; i++) {
+    //     for (let somaCompras = 0; 
+    //         somaCompras < contas[i].compras.length; 
+    //         somaCompras++) {
+    //         soma += contas[i].compras[somaCompras];
+    //         novoSaldo = (contas.saldoTotal - soma);
+    //         contas.compras = [];
+    //         contas.saldoTotal = novoSaldo
+    //     }
+    // }
+    // return contas
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+//   const agendaOrdenada = consultas.nome.sort(item) => {
+    // return consultas.nome.sort()
 }
 
 // EXERCÍCIO 15B
