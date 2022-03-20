@@ -145,19 +145,19 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-    // let soma = 0
-    // let novoSaldo = 0
-    // for (let i = 0; i < contas.length; i++) {
-    //     for (let somaCompras = 0; 
-    //         somaCompras < contas[i].compras.length; 
-    //         somaCompras++) {
-    //         soma += contas[i].compras[somaCompras];
-    //         novoSaldo = (contas.saldoTotal - soma);
-    //         contas.compras = [];
-    //         contas.saldoTotal = novoSaldo
-    //     }
-    // }
-    // return contas
+    let soma = 0
+    let novoSaldo = 0
+    for (let i = 0; i < contas.length; i++) {
+        for (let somaCompras = 0; somaCompras < contas[i].compras.length; somaCompras++) {
+            soma += contas[i].compras[somaCompras];
+            novoSaldo = contas[i].saldoTotal - soma;
+            contas[i].saldoTotal = novoSaldo
+            soma = 0;
+
+        }
+        contas[i].compras = []
+    }
+    return contas;
 }
 
 // EXERCÍCIO 15A
