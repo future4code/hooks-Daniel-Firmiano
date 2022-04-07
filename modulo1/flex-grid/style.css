@@ -1,0 +1,24 @@
+*{
+padding: 0px;
+margin: 0px;
+
+
+}
+
+h2{
+background-color: mediumvioletred;
+display: flex;
+font-size: 19px;
+padding: 10px;
+}
+
+img{
+    width: 15px;
+    margin-right: 5px;
+}
+#centralizar{
+    position: absolute;
+    top: 5%;
+    left: 97%;
+    transform: translate(-10%, -90%);
+}
