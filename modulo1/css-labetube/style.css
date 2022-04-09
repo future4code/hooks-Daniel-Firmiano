@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+header{
+    background-color: orangered;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    font-size: 40px;
+}
+button{
+    padding: 10px 20px;
+}
+nav{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+}
+.item{
+    width: 100%
+    box-shadow: 20px 20px 50px darkgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.item video{
+    width: 500px;
+}
