@@ -1,0 +1,141 @@
+
+.card {
+    /* height: 100%; */
+    display: flex;
+    justify-content: space-between;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5em;
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 9px 9px 9px 2px rgba(0, 0, 0, 0.2);
+   
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: unset;
+}
+
+.perfis {
+     width: 350px; 
+    /* height: 300px;  */
+    border-radius: .5em;
+    /* width: 90%; */
+    height: 100%;
+    position: relative;
+    /* box-shadow: 1px 1px 10px #CCC; */
+    
+}
+.card img {
+    
+    width: 300px;
+    border-radius: 10px;
+    height: 430px;
+}
+
+.perfis h1 {
+    font-size: 20px;
+}
+
+.perfis p {
+    font-size: 15px;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    border-radius: .5em;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: .5em;
+    object-fit: cover;
+}
+
+.descriçao {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 8em;
+    width: 100%;
+    padding-bottom: 0.2em;
+}
+
+.descriçao h1 {
+    height: 1.5em;
+    font-size: 24px;
+    padding-left: 2em;
+    margin: 0 auto;
+    color: #FFF;
+    text-shadow: 2px 2px 2px #222;
+}
+
+.descriçao p {
+    height: 1em;
+    font-size: 18px;
+    /* padding-left: 2em; */
+    padding: 0 2em 4em 2em;
+    /* padding-bottom: 4em; */
+    margin-bottom: 5em ;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #222;
+}
+
+
+
+.botoes button {
+    height: 15%;
+    width: 55%;
+    /* display: flex; */
+    /* align-items: flex-start; */
+    justify-content: space-between;
+    margin:  100px 70px 1px 50px ;
+    border: none;
+    width: 5em;
+    height: 5em;
+    border-radius: 150px;
+    margin-top: 2em;
+}
+
+.botaoPositive {
+background-color: green;
+cursor: pointer;
+background-image: url(./Img/1.png);
+background-size: contain;
+font-size: 10px;
+-webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: transparent;
+}
+
+.botaoNegative {
+background-color: red;
+cursor: pointer;
+background-image: url(./Img/2.png);
+background-size: contain;
+font-size: 10px;
+
+}
+
+.botaoRetorno {
+margin: 10px 0 40px 0 ;
+width: 3em;
+height: 3em;
+cursor: pointer;
+}
+
+
+
+
+
+.retorno {
+font-size: 1.5em;
+}
+
