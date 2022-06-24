@@ -1,0 +1,24 @@
+html, body {
+    height: 100%;
+    
+  }
+
+
+
+button {    /* BOTÃO PADRAO*/
+    background: linear-gradient(to top right, #333333 0%, #FFFFFF 100%  );    /*cor de fundo*/
+    color: #FFF;     /*cor da fonte*/
+    padding: 0 20px;    /*distancia interna*/
+    border: 2px solid #FFF;   /*tamanho da borda, tipo e cor*/
+    border-radius: 10px;   /*borda em raio de 25px*/
+    height: 2.5em;     /*altura do botão*/
+    text-transform: uppercase;    /*Transforma o texto em caixa alta*/
+    font-weight: bold;     /* texto em negrito*/
+    font-size: 1em;     /*tamanho da fonte*/
+    cursor: pointer;     /* aparece a mãozinha quando o mouse esta em cima*/
+    transition: 0.1s;     /* tempo de transição de um estado para outro*/
+  }
+
+  button:hover {     /*quando o mouse estiver por cima*/
+   font-size: 1.2em;
+  }

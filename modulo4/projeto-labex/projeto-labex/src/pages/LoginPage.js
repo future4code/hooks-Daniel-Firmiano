@@ -7,6 +7,8 @@ const AdminHomePage = () => {
   return (
     <div>
         <p>Login</p>
+        <input placeholder='Login'/>
+        <input placeholder='Senha'/>
         <button onClick={() => goToBack(navigate)}>Voltar</button>
         <button onClick={() => goToAdminHome(navigate)}>Entrar</button>
     </div>

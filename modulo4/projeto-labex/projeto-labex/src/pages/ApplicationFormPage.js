@@ -8,6 +8,9 @@ const ApplicationFormPage = () => {
   return (
     <div>
         <p>ApplicationFormPage</p>
+        <form>
+          
+        </form>
         <button onClick={() => goToBack(navigate)}>Voltar</button>
         <button>Enviar</button>
     </div>
