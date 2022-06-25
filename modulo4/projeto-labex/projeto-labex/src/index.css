@@ -16,9 +16,9 @@ button {    /* BOTÃO PADRAO*/
     font-weight: bold;     /* texto em negrito*/
     font-size: 1em;     /*tamanho da fonte*/
     cursor: pointer;     /* aparece a mãozinha quando o mouse esta em cima*/
-    transition: 0.1s;     /* tempo de transição de um estado para outro*/
+    transition: 1.5s;     /* tempo de transição de um estado para outro*/
   }
 
   button:hover {     /*quando o mouse estiver por cima*/
-   font-size: 1.2em;
+   background: black;
   }

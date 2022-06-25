@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { goToApplicationForm , goToBack } from '../coordinator/Coordinator';
 import { urlBase } from '../services/ApiRequest'
 import axios from "axios";
-// import ApplicationFormPage from './ApplicationFormPage';
 
 const ListTripsPage = () => {
     const navigate = useNavigate()

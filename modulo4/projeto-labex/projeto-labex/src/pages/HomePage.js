@@ -9,8 +9,7 @@ const HomePage = () => {
 
   return (
     <div className='containerHome'>
-      <h1></h1>
-      <p>Labex</p>
+      <h1>Labex</h1>
       <button onClick={()=> goToListTrips(navigate)}>Ver viagens</button>
       <button onClick={()=> goToLogin(navigate)}>Área de admin</button>
     </div>
