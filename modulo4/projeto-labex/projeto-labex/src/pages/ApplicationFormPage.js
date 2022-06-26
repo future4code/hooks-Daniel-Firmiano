@@ -14,7 +14,9 @@ const ApplicationFormPage = (props) => {
   const [trips, setTrips] = useState([])
   const [tripsId, setTripsId] = useState("")
   const [country, setCountry] = useState({})
+  const [modal, setModal] = useState(false);
   const [inputs, setInputs] = useState({
+    travel: "",
     name: "",
     age: "",
     applicationText: "",
@@ -24,6 +26,13 @@ const ApplicationFormPage = (props) => {
   useEffect(() => {
     getTrips()
   }, [])
+
+  const showModal = (value, id) => {
+    setModal(value);
+    tripsId(id);
+    setInputs({});
+    applyToTrip()
+  };
 
   const getTrips = () => {
     axios
@@ -82,9 +91,12 @@ const ApplicationFormPage = (props) => {
  
   const handleNameTrip = trips && trips.map((trip) => {
     return (
+      
       <option key={trip.id} value={trip.id}>
        {trip.name}
       </option>
+      
+      
     ) 
   })
 
@@ -146,7 +158,7 @@ const ApplicationFormPage = (props) => {
         </select>
       </form>
       <button onClick={() => goToBack(navigate)}>Voltar</button>
-      <button onClick={() => applyToTrip()}>Enviar</button>
+      <button onClick={() => showModal(!modal, trip.id)}>Enviar</button>
     </div>
   )
 }
