@@ -17,16 +17,12 @@ const AdminHomePage = () => {
     const onChangePassword = (event) => {
       setPassword(event.target.value);
     };
-
     
-
     const onSubmitLogin = () => {
-
       const body = {
         email: email,
         password: password
       };
-
         axios 
         .post(`${urlBase}/login`, body)
         .then((res) => {

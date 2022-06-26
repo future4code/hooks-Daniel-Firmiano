@@ -9,14 +9,12 @@ import { countries } from '../services/countries'
 import api from "../services/ApiRequest";
 
 
-const ApplicationFormPage = (props) => {
+const ApplicationFormPage = () => {
   const navigate = useNavigate()
   const [trips, setTrips] = useState([])
   const [tripsId, setTripsId] = useState("")
-  const [country, setCountry] = useState({})
-  const [modal, setModal] = useState(false);
+  const [count, setCount] = useState("")
   const [inputs, setInputs] = useState({
-    travel: "",
     name: "",
     age: "",
     applicationText: "",
@@ -26,13 +24,6 @@ const ApplicationFormPage = (props) => {
   useEffect(() => {
     getTrips()
   }, [])
-
-  const showModal = (value, id) => {
-    setModal(value);
-    tripsId(id);
-    setInputs({});
-    applyToTrip()
-  };
 
   const getTrips = () => {
     axios
@@ -46,35 +37,22 @@ const ApplicationFormPage = (props) => {
   }
 
   const applyToTrip = async () => {
-    const brasil = "brasil"
     try {
     const body = {
       name: inputs.name,
       age: inputs.age,
       applicationText: inputs.applicationText,
       profession: inputs.profession,
-      country: brasil
+      country: count
     }
-    const ress = await api.post(`${urlBase}/trips/qSfN0EumjmBnB6ze4N19/apply`, body);
+    const ress = await api.post(`${urlBase}/trips/${tripsId}/apply`, body);
       alert("trip adicionada com sucesso.");
       console.log(ress.config.data)
     } catch (error) {
       console.log(error.response);
     }
-    //  finally {
-    //   setModal(false);
-    // }
+    
   };
-  //   axios 
-  //   .post(`${urlBase}/trips/${id}/apply`, body )
-  //   .then(() => {
-  //     alert("track adicionada com sucesso.");
-  //   })
-  // }.catch((err) => {
-  //     alert("Erro no envio")
-  //     console.log(err)
-  //   });
-  // }
 
   const handleInputsValue = (e) => {
     e.preventDefault();
@@ -84,31 +62,26 @@ const ApplicationFormPage = (props) => {
     }));
   };
   
-
   const onChangeViagem = (e) => {
     setTripsId(e.target.value)
   }
  
+  const onChangeCountry = (e) => {
+    setCount(e.target.value)
+  } 
+
   const handleNameTrip = trips && trips.map((trip) => {
     return (
-      
       <option key={trip.id} value={trip.id}>
        {trip.name}
       </option>
-      
-      
     ) 
   })
 
   const handleNameCoutries = countries.map((country) => {
+    
     return (
-      <option 
-        type="text" 
-        value={inputs.country} 
-        onChange={handleInputsValue}
-        name="country"
-        key={country.code} 
-      >
+      <option  key={country.code} >
         {country.label}
       </option>
     )
@@ -117,9 +90,11 @@ const ApplicationFormPage = (props) => {
   return (
     <div className='containerForm'>
       <h1>Inscrever-se para uma viagem</h1>
-        
       <form className='cardForm'>
-        <select defaultValue="" onChange={onChangeViagem}>
+        <select 
+          Value={tripsId} 
+          onChange={onChangeViagem}
+          name="tripsId">
               <option value="" disable> Escolha uma viagem</option>
               {handleNameTrip}
         </select>
@@ -152,13 +127,18 @@ const ApplicationFormPage = (props) => {
           onChange={handleInputsValue}
           name="profession"
         />
-        <select>
+        <select 
+        type="text" 
+        value={count} 
+        onChange={onChangeCountry}
+        name="country"
+        >
           <option>Selecione um país</option>
           {handleNameCoutries}
         </select>
       </form>
       <button onClick={() => goToBack(navigate)}>Voltar</button>
-      <button onClick={() => showModal(!modal, trip.id)}>Enviar</button>
+      <button onClick={() => applyToTrip()}>Enviar</button>
     </div>
   )
 }

@@ -12,27 +12,41 @@ const AdminHomePage = () => {
 
     useEffect(() => {
       getTrips()
-    }, [])
+    }, [trips])
 
     const getTrips = () => {
       axios
       .get(`${urlBase}/trips`)
       .then((response) => {
         setTrips(response.data.trips)
-          
       })
       .catch((error) => {
           console.log(error)
       })
-     
     }
-    const mostrarNome = trips.map((trip) => {
+    const deleteTrip = (id) => {
+      const token = localStorage.getItem("token");
+      const headers = {
+        headers: {
+        "Content-Type": "application/json",
+        "auth": token
+        }
+      }
+      axios
+      .delete(`${urlBase}/trips/${id}`, headers)
+      .then(() =>{
+        alert("Viagem deletada com sucesso")
+      })
+      .catch(() => {
+        alert("erro")
+      })
+    }
+    const showName = trips.map((trip) => {
       return (
         <div  className='cardTrips' key={trip.id}>
           <p  onClick={() => goToTripDetails(navigate)}><strong>Nome:</strong> {trip.name}</p>
-          <button>X</button>
+          <button onClick={() => deleteTrip(trip.id)}>X</button>
           <br />
-          {/* <ApplicationFormPage nome={trip.name}/> */}
         </div>
         )
       })
@@ -41,7 +55,7 @@ const AdminHomePage = () => {
         <h1>Painel administrativo</h1>
         <button onClick={() => goToBack(navigate)}>Voltar</button>
         <button onClick={() => goToCreateTrip(navigate)}>Criar viagem</button>
-        {mostrarNome}
+        {showName}
         <button>Logout</button>
     </div>
   )

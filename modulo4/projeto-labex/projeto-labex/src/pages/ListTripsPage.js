@@ -22,7 +22,6 @@ const ListTripsPage = () => {
           <p><strong>Duração:</strong>{trip.durationInDays}</p>
           <p><strong>Data:</strong>{trip.date}</p>
           <br />
-          {/* <ApplicationFormPage nome={trip.name}/> */}
         </div>
       )
     })
@@ -33,6 +32,7 @@ const ListTripsPage = () => {
       .get(`${urlBase}/trips`)
       .then((response) => {
         setTrips(response.data.trips)
+        // console.log(response.data.trips[0].id)
           
       })
       .catch((error) => {
