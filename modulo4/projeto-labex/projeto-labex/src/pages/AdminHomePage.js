@@ -46,17 +46,16 @@ const AdminHomePage = () => {
         <div  className='cardTrips' key={trip.id}>
           <p  onClick={() => goToTripDetails(navigate)}><strong>Nome:</strong> {trip.name}</p>
           <button onClick={() => deleteTrip(trip.id)}>X</button>
-          <br />
         </div>
         )
       })
   return (
-    <div>
-        <h1>Painel administrativo</h1>
-        <button onClick={() => goToBack(navigate)}>Voltar</button>
-        <button onClick={() => goToCreateTrip(navigate)}>Criar viagem</button>
-        {showName}
-        <button>Logout</button>
+    <div className='containerAdmin'>
+      <button className='botãoOneAdmin' onClick={() => goToBack(navigate)}>Voltar</button>
+      <button className='botaoThreeAdmin' >Logout</button>
+      <h1>PAINEL ADMINISTRATIVO</h1>
+      {showName}
+      <button className='botaoTwoAdmin' onClick={() => goToCreateTrip(navigate)}>Criar viagem</button>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import './TripDetailsPage.css'
 import { goToBack } from '../coordinator/Coordinator'
 import { useNavigate } from 'react-router-dom'
 import { urlBase } from '../services/ApiRequest'
@@ -8,9 +9,9 @@ import axios from 'axios'
 const TripDetailsPage = () => {
     const navigate = useNavigate()
     const [tripDetail, setTripDetail] = useState([])
-    useEffect(() => {
-      getTripDetail()
-    }, [])
+    // useEffect(() => {
+    //   getTripDetail()
+    // }, [])
 
     const getTripDetail = () => {
       const token = localStorage.getItem("token");
@@ -23,7 +24,7 @@ const TripDetailsPage = () => {
       .get(`${urlBase}/trip/I4jtfYrBYtqKIXNGtqLU`, headers)
       .then((res) => {
         // alert("certo")
-        console.log(res.data.trip.candidates)
+        console.log(res.data.trip)
         setTripDetail(res.data.trip)
       })
       .catch(() => {
@@ -31,19 +32,19 @@ const TripDetailsPage = () => {
       })
     }
     
-    const handleTripDetails =tripDetail((detail) => {
+    const handleTripDetails = tripDetail.map((detail) => {
       return (
         <div key={detail.id}>
-            {detail.profession}
-            {detail.name}
-            {detail.age}
-            {detail.applicationText}
-            {detail.country}
+            <p>{detail.profession}</p>
+            <p>{detail.name}</p>
+            <p>{detail.age}</p>
+            <p>{detail.applicationText}</p>
+            <p>{detail.country}</p>
         </div>
       )
     })
   return (
-    <div>
+    <div className='containerDetails' >
         <p>TripDetailsPage</p>
         <button onClick={() => goToBack(navigate)}>Voltar</button>
         {handleTripDetails}

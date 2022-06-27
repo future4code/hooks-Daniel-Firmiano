@@ -1,4 +1,5 @@
 import React from 'react'
+import './LoginPage.css'
 import { useNavigate } from "react-router-dom";
 import { goToBack , goToAdminHome } from '../coordinator/Coordinator';
 import { useState } from 'react'
@@ -34,12 +35,12 @@ const AdminHomePage = () => {
         });
     }
   return (
-    <div>
-        <p>Login</p>
+    <div className='conteinerLogin'>
+        <h2>LOGIN</h2>
         <input placeholder='Email' type="email" value={email} onChange={onChangeEmail}/>
         <input placeholder='Password' type="password" value={password} onChange={onChangePassword}/>
-        <button onClick={() => goToBack(navigate)}>Voltar</button>
-        <button onClick={() => onSubmitLogin()}>Entrar</button>
+        <button className='botaoOneLogin' onClick={() => goToBack(navigate)}>Voltar</button>
+        <button className='botãoTwoLogin' onClick={() => onSubmitLogin()}>Entrar</button>
     </div>
   )
 }

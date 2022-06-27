@@ -59,6 +59,7 @@ const CreateTripPage = () => {
           setPlanet("")
           setDescription("")
           setNome("")
+         
       })
       .catch((err) => {
           alert("Erro na criação da viagem")
@@ -67,10 +68,11 @@ const CreateTripPage = () => {
       })
     }
   return (
-    <div>
-        <p>CreateTripPage</p>
+    <div className='containerCreateTrip' >
+        <h1>CreateTripPage</h1>
         <form>
           <input 
+            className='inputSelect'
             placeholder='Nome'
             type="text"
             value={nome}
@@ -78,6 +80,7 @@ const CreateTripPage = () => {
             name= "nome"
           />
           <select
+            className='inputSelect'
             type="text" 
             value={planet} 
             onChange={handlePlanet}
@@ -94,6 +97,7 @@ const CreateTripPage = () => {
             <option>Nepturno</option>
           </select>
           <input 
+            className='inputSelect'
             id="date"
             type="date"
             value={date}
@@ -102,6 +106,7 @@ const CreateTripPage = () => {
             
           /> 
           <input 
+            className='inputSelect'
             placeholder='Descrição'
             type="text"
             value={description}
@@ -111,6 +116,7 @@ const CreateTripPage = () => {
           <form>
           <label for="durationInDays"></label>
           <input 
+            className='inputSelect'
             id="durationInDays"
             placeholder='Duração em dias'
             type="number"
@@ -121,8 +127,8 @@ const CreateTripPage = () => {
           </form>
 
         </form>
-        <button onClick={() => goToBack(navigate)}>Voltar</button>
-        <button onClick={() => createTrip()}>Enviar</button>
+        <button className='botaoOneCreateTrip' onClick={() => goToBack(navigate)}>Voltar</button>
+        <button className='botaoTwoCreateTrip' onClick={() => createTrip()}>Enviar</button>
     </div>
   )
 }

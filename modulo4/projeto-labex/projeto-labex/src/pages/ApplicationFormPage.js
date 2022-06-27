@@ -89,9 +89,11 @@ const ApplicationFormPage = () => {
 
   return (
     <div className='containerForm'>
-      <h1>Inscrever-se para uma viagem</h1>
+      <button className="botaoOneForm" onClick={() => goToBack(navigate)}>Voltar</button>
+      <h1><strong>ESCREVER-SE PARA UMA VIAGEM</strong></h1>
       <form className='cardForm'>
         <select 
+          className='imputForm'
           Value={tripsId} 
           onChange={onChangeViagem}
           name="tripsId">
@@ -99,6 +101,7 @@ const ApplicationFormPage = () => {
               {handleNameTrip}
         </select>
         <input 
+          className='imputForm'
           placeholder='Nome' 
           type="text"
           value={inputs.name}
@@ -106,6 +109,7 @@ const ApplicationFormPage = () => {
           name="name"
         />
         <input 
+          className='imputForm'
           placeholder='Idade'
           type="number"
           value={inputs.age}
@@ -114,6 +118,7 @@ const ApplicationFormPage = () => {
           
         />
         <input 
+          className='imputForm'
           placeholder='Texto de candidatura' 
           type="text"
           value={inputs.applicationText}
@@ -121,6 +126,7 @@ const ApplicationFormPage = () => {
           name="applicationText"
         />
         <input 
+          className='imputForm'
           placeholder='Profissão' 
           type="text"
           value={inputs.profession}
@@ -128,17 +134,20 @@ const ApplicationFormPage = () => {
           name="profession"
         />
         <select 
-        type="text" 
-        value={count} 
-        onChange={onChangeCountry}
-        name="country"
+          className='imputForm'
+          type="text" 
+          value={count} 
+          onChange={onChangeCountry}
+          name="country"
         >
           <option>Selecione um país</option>
           {handleNameCoutries}
         </select>
       </form>
-      <button onClick={() => goToBack(navigate)}>Voltar</button>
-      <button onClick={() => applyToTrip()}>Enviar</button>
+      <div>
+        {/* <button className="botaoOne" onClick={() => goToBack(navigate)}>Voltar</button> */}
+        <button className='botaoTwoForm' onClick={() => applyToTrip()}>Enviar</button>
+      </div>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import './ListTripsPage.css'
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import { goToApplicationForm , goToBack } from '../coordinator/Coordinator';
@@ -15,11 +16,15 @@ const ListTripsPage = () => {
 
     const handleGetTrips = trips.map((trip) => {
       return (
-        <div key={trip.id}>
+        <div className='blocoTripsList' key={trip.id}>
           <p><strong>Nome:</strong> {trip.name}</p>
+          <br/>
           <p><strong>Descrição:</strong> {trip.description}</p>
+          <br/>
           <p><strong>Planeta:</strong>{trip.planet}</p>
+          <br/>
           <p><strong>Duração:</strong>{trip.durationInDays}</p>
+          <br/>
           <p><strong>Data:</strong>{trip.date}</p>
           <br />
         </div>
@@ -41,14 +46,17 @@ const ListTripsPage = () => {
   }
 
   return (
-    <div>
-        <h1>Lista de viagens</h1>
-        <br />
-        {handleGetTrips}
+    <div className="containerTrips">
+      <button className='botaoOneList' onClick={() => goToBack(navigate) }>Voltar</button>
+      <h2>Lista de viagens</h2>
+      <div className='blocoPrincipal'>
         
-        <br />
-        <button onClick={() => goToBack(navigate) }>Voltar</button>
-        <button onClick={() => goToApplicationForm(navigate)}>Inscrever-se</button>
+        
+        {handleGetTrips}
+      </div>
+      <div>
+        <button className='botaoTwoList' onClick={() => goToApplicationForm(navigate)}>Inscrever-se</button>
+      </div>
     </div>
   )
 }
